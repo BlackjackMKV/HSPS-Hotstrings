@@ -6,7 +6,7 @@ A set of hotstrings for the HSPS TSMs to use in order to improve note-taking eff
 There's two main ways to install the hotstrings. Option 1 is easier, whereas option 2 will only show up as one process in Task Manager. Otherwise, the outcome is completely identical.
 
 ##### Option 1 - Automatic Installer
-1. Download the .EXE files for the hotstring sets you want as well as the Installer.bat.
+1. Download the .EXE files for the hotstring sets you want as well as the Installer.bat. Alternatively, if you just want them all, simply download the latest ZIP file from the releases section.
 2. Make sure that the Installer.bat and the EXEs are in the same folder.
 3. Run the Installer.bat.
 4. Done! Your hotkeys should be working! You can use the part of the name before the dash with 'ver' on the end to check if it works and what version you have installed, e.x. essentialsver.
