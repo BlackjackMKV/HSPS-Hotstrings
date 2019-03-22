@@ -20,6 +20,11 @@ Compiled by Thomas Harper
  12 would be 'me12'.
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+-------------------
+advancedinstallsver
+-------------------
+Prints the version of the package.
+
 ----
 mg71
 ----

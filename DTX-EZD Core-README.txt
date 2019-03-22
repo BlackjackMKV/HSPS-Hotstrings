@@ -6,6 +6,11 @@ are:
 Compiled by Thomas Harper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+-------------------
+dtx-ezd corever
+-------------------
+Prints the version of the package.
+
 ---
 ins
 ---

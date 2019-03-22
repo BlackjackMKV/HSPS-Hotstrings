@@ -1,3 +1,5 @@
+::essentialsver::19.03.22.01
+
 ::rmt::{raw}A:Remoted in.
 
 ::wrk::{raw}R:Works!

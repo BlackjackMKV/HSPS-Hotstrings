@@ -6,6 +6,11 @@ are:
 Compiled by Thomas Harper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+-------------------
+basicinstallsver
+-------------------
+Prints the version of the package.
+
 ---
 ros
 ---

@@ -6,6 +6,11 @@ are:
 Compiled by Thomas Harper
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+-------------------
+etransver
+-------------------
+Prints the version of the package.
+
 ----
 elog
 ----
