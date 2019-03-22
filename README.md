@@ -1,6 +1,6 @@
 # HSPS-Hotstrings
 
-A set of hotstrings for the HSPS TSMs to use in order to improve note-taking efficiency.
+A set of hotstrings for the HSPS TSMs to use in order to improve note-taking efficiency. You can view the full list of hotkeys for each set in their respective <name>-readme.txt files.
 
 ### How to install the hotstrings
 There's two main ways to install the hotstrings. Option 1 is easier, whereas option 2 will only show up as one process in Task Manager. Otherwise, the outcome is completely identical.
