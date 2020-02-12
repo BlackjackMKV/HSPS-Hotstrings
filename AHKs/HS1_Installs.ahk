@@ -34,6 +34,7 @@ SendRaw, Done
 Return
 
 ::eSyncIBEX::
+Sleep, 2000
 InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
 InputBox, eSRVAdmin, Admin Name, Please etner the first initial and last name of the eServices Admin who provided passwords, Show, 50px, 50px, , , Sans, 3000, eSRV Admin
 ; Gui, Add, DropDownList, ProvBlocked, Yes|No
@@ -89,13 +90,21 @@ SendRaw, R: cust is ready for onboarding
 Send, {return}
 SendRaw, Done
 
+
+::IBEXOnly::
+
+
 ; URL used to acces the IBEX Support Tool
 ::IBEXSupport::
+Sleep, 2000
 SendRaw, https://ibex-support.internetbrands.com/logs/login.html
 Return
 
 ; URL Used to figure out whether or not a practice has an API
 ::FindAPI::
+Sleep, 2000
 InputBox, BID, Business ID, Please enter the Business ID, Show, 50px, 50px, , , Sans, 3000, Enter Business ID
 
 SendRaw, https://ibex-support.internetbrands.com/logs/clientDataViewer.html?clientUserName=%BID% 
+
+
