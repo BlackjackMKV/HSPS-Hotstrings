@@ -4,11 +4,21 @@ SendMode Input  ; Recommended for new scripts due to its superior speed and reli
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
 
+;=================================== START ESYNC ONLY ======================================;
+
+;Script used for Installs that contain eSync only 
 ::eSyncOnly::
+
+;Pauses for 2 seconds at the start of the script to allow for the typed script to be deleted prior to the GUI showing up
+Sleep, 2000
+
+;Will create a text entry box for the name of the customer contact
 InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
+
+;Will create a text entry box for the name of the eSRV Admin TSM that set up eClaims
 InputBox, eSRVAdmin, Admin Name, Please etner the first initial and last name of the eServices Admin who provided passwords, Show, 50px, 50px, , , Sans, 3000, eSRV Admin
 
-SendRaw, A: Contacting %custName%
+SendRaw, A: Contacting %custName% 
 Send, {return}
 SendRaw, - Remoted into server and workstations
 Send, {return}
@@ -33,12 +43,27 @@ Send, {return}
 SendRaw, Done
 Return
 
+;=================================== END ESYNC ONLY ======================================;
+
+
+
+;================================= START ESYNC & IBEX ======================================;
+
+;Script used for Installs that contain eSync and IBEX
 ::eSyncIBEX::
+
+;Pauses for 2 seconds at the start of the script to allow for the typed script to be deleted prior to the GUI showing up
 Sleep, 2000
+
+;Will create a text entry box for the name of the customer contact
 InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
+
+;Will create a text entry box for the name of the eSRV Admin TSM that set up eClaims
 InputBox, eSRVAdmin, Admin Name, Please etner the first initial and last name of the eServices Admin who provided passwords, Show, 50px, 50px, , , Sans, 3000, eSRV Admin
-; Gui, Add, DropDownList, ProvBlocked, Yes|No
-Gui, Add, DropDownList, SelectiveUp, Yes|No
+
+
+; Attempting to create a drop down list with a yes/no option so users are still prompted as to whether or not they actually enabled the selective upload, verified the upload, etc. 
+; Gui, Add, DropDownList, SelectiveUp, Yes|No
 
 
 SendRaw, Blocked Providers: %SelectiveUp%
@@ -90,15 +115,39 @@ SendRaw, R: cust is ready for onboarding
 Send, {return}
 SendRaw, Done
 
+;================================= END ESYNC & IBEX ======================================;
 
+
+
+;=================================== START IBEX ONLY ======================================;
+
+;Script for IBEX-Only installs. Includes prompt for contact name, Who verified install 
 ::IBEXOnly::
 
+;Pauses for 2 seconds at the start of the script to allow for the typed script to be deleted prior to the GUI showing up
+Sleep, 2000
+
+;Will create a text entry box for the name of the customer contact
+InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
+
+
+;=================================== END IBEX ONLY ======================================;
+
+
+
+;=================================== START IBEX SUPPORT =====================================;
 
 ; URL used to acces the IBEX Support Tool
 ::IBEXSupport::
 Sleep, 2000
 SendRaw, https://ibex-support.internetbrands.com/logs/login.html
 Return
+
+;=================================== START IBEX SUPPORT =====================================;
+
+
+
+;================================== START IBEX API FINDER ===================================;
 
 ; URL Used to figure out whether or not a practice has an API
 ::FindAPI::
@@ -107,4 +156,5 @@ InputBox, BID, Business ID, Please enter the Business ID, Show, 50px, 50px, , , 
 
 SendRaw, https://ibex-support.internetbrands.com/logs/clientDataViewer.html?clientUserName=%BID% 
 
+;================================== END IBEX API FINDER ===================================;
 
