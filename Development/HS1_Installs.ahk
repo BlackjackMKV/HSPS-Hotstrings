@@ -63,14 +63,16 @@ InputBox, eSRVAdmin, Admin Name, Please etner the first initial and last name of
 
 
 ; Attempting to create a drop down list with a yes/no option so users are still prompted as to whether or not they actually enabled the selective upload, verified the upload, etc. 
-; Gui, Add, DropDownList, SelectiveUp, Yes|No
+;vvvvvvvvvvvvv Attempts below vvvvvvvvvvvvvvvv
+Gui, Add, DropDownList, Yes, No
+; Gui, Add, DropDownList, selectiveUp, Yes|No
 
 
-SendRaw, Blocked Providers: %SelectiveUp%
+SendRaw, Blocked Providers: %DropDownList%
 Send, {return}
 SendRaw, Who Enabled 2-Way: SFDC
 Send, {return}
-SendRaw, Enabled Selective Upload: 
+SendRaw, Enabled Selective Upload: %selectiveUp%
 Send, {return}
 SendRaw, Started Ibex Scheduler: Yes
 Send, {return}
@@ -114,7 +116,7 @@ Send, {return}
 SendRaw, R: cust is ready for onboarding
 Send, {return}
 SendRaw, Done
-
+return 
 ;================================= END ESYNC & IBEX ======================================;
 
 
@@ -130,6 +132,30 @@ Sleep, 2000
 ;Will create a text entry box for the name of the customer contact
 InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
 
+SendRaw, Blocked Providers: %anyBlocked%
+Send, {return}
+SendRaw, Who Enabled 2-Way: SFDC
+Send, {return}
+SendRaw, Enabled Selective Upload: %selectiveUp%
+Send, {return}
+SendRaw, Started Ibex Scheduler: Yes
+Send, {return}
+SendRaw, Verified Upload: Yes
+Send, {return}
+SendRaw, Checked 'ActivePatientsOnly': Yes
+Send, {return}
+SendRaw, Verified addresses, username and
+Send, {return}
+SendRaw, passwords are correct: 
+Send, {return}
+	SendRaw, TSM Entered: 
+    Send, {return}
+	SendRaw, TSM Witnessed: 
+    Send, {return}
+
+
+
+return
 
 ;=================================== END IBEX ONLY ======================================;
 
@@ -156,5 +182,7 @@ InputBox, BID, Business ID, Please enter the Business ID, Show, 50px, 50px, , , 
 
 SendRaw, https://ibex-support.internetbrands.com/logs/clientDataViewer.html?clientUserName=%BID% 
 
+
+return 
 ;================================== END IBEX API FINDER ===================================;
 
