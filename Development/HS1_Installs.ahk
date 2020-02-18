@@ -64,21 +64,21 @@ InputBox, eSRVAdmin, Admin Name, Please etner the first initial and last name of
 
 ; Attempting to create a drop down list with a yes/no option so users are still prompted as to whether or not they actually enabled the selective upload, verified the upload, etc. 
 ;vvvvvvvvvvvvv Attempts below vvvvvvvvvvvvvvvv
-Gui, Add, DropDownList, Yes, No
+; Gui, Add, DropDownList, Yes, No
 ; Gui, Add, DropDownList, selectiveUp, Yes|No
 
 
-SendRaw, Blocked Providers: %DropDownList%
+SendRaw, Blocked Providers:
 Send, {return}
 SendRaw, Who Enabled 2-Way: SFDC
 Send, {return}
-SendRaw, Enabled Selective Upload: %selectiveUp%
+SendRaw, Enabled Selective Upload: 
 Send, {return}
-SendRaw, Started Ibex Scheduler: Yes
+SendRaw, Started Ibex Scheduler: 
 Send, {return}
-SendRaw, Verified Upload: Yes
+SendRaw, Verified Upload: 
 Send, {return}
-SendRaw, Checked 'ActivePatientsOnly': Yes
+SendRaw, Checked 'ActivePatientsOnly': 
 Send, {return}
 SendRaw, Verified addresses, username and
 Send, {return}
@@ -127,34 +127,43 @@ return
 ::IBEXOnly::
 
 ;Pauses for 2 seconds at the start of the script to allow for the typed script to be deleted prior to the GUI showing up
-Sleep, 2000
+Sleep, 1000
 
 ;Will create a text entry box for the name of the customer contact
 InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
 
-SendRaw, Blocked Providers: %anyBlocked%
+SendRaw, Blocked Providers: 
 Send, {return}
 SendRaw, Who Enabled 2-Way: SFDC
 Send, {return}
-SendRaw, Enabled Selective Upload: %selectiveUp%
+SendRaw, Enabled Selective Upload: 
 Send, {return}
-SendRaw, Started Ibex Scheduler: Yes
+SendRaw, Started Ibex Scheduler: 
 Send, {return}
-SendRaw, Verified Upload: Yes
+SendRaw, Verified Upload: 
 Send, {return}
-SendRaw, Checked 'ActivePatientsOnly': Yes
+SendRaw, Checked 'ActivePatientsOnly': 
 Send, {return}
 SendRaw, Verified addresses, username and
 Send, {return}
 SendRaw, passwords are correct: 
 Send, {return}
-	SendRaw, TSM Entered: 
-    Send, {return}
-	SendRaw, TSM Witnessed: 
-    Send, {return}
-
-
-
+tab SendRaw, TSM Entered: 
+Send, {return}
+tab SendRaw, TSM Witnessed: 
+Send, {return}
+Send, {return}
+SendRaw, A: Contacting %custName%
+Send, {return}
+SendRaw, - Remoted into server
+Send, {return}
+SendRaw, - Installing IBEX
+Send, {return}
+SendRaw, - Running upload 
+Send, {return}
+SendRaw, R: Successful
+Send, {return}
+SendRaw, Done
 return
 
 ;=================================== END IBEX ONLY ======================================;
