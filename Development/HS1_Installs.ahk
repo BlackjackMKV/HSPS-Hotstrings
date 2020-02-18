@@ -88,7 +88,7 @@ Send, {return}
     Send, {return}
 	SendRaw, TSM Witnessed: 
     Send, {return}
-
+    Send, {return}
 SendRaw, A: Contacting %custName% | remoted into server and workstations
 Send, {return}
 SendRaw, -Disabled power saving settings
@@ -148,11 +148,11 @@ SendRaw, Verified addresses, username and
 Send, {return}
 SendRaw, passwords are correct: 
 Send, {return}
-tab SendRaw, TSM Entered: 
-Send, {return}
-tab SendRaw, TSM Witnessed: 
-Send, {return}
-Send, {return}
+    SendRaw, TSM Entered: 
+    Send, {return}
+    SendRaw, TSM Witnessed: 
+    Send, {return}
+    Send, {return}
 SendRaw, A: Contacting %custName%
 Send, {return}
 SendRaw, - Remoted into server
