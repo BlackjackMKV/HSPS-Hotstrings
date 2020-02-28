@@ -61,34 +61,41 @@ InputBox, custName, Customer Name, Please enter the name of the customer you are
 ;Will create a text entry box for the name of the eSRV Admin TSM that set up eClaims
 InputBox, eSRVAdmin, Admin Name, Please etner the first initial and last name of the eServices Admin who provided passwords, Show, 50px, 50px, , , Sans, 3000, eSRV Admin
 
+;Will create a text entry box for the name of the customer contact
+InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, TSMEntered, TSM Entered, Please enter your name, Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, TSMWitnessed, TSM Witnessed, Please enter the name of the TSM who verified the address and Business ID, Show, 50px, 50px, , , Sans, 3000, Enter Name
 
-; Attempting to create a drop down list with a yes/no option so users are still prompted as to whether or not they actually enabled the selective upload, verified the upload, etc. 
-;vvvvvvvvvvvvv Attempts below vvvvvvvvvvvvvvvv
-; Gui, Add, DropDownList, Yes, No
-; Gui, Add, DropDownList, selectiveUp, Yes|No
+; Temporary handling for the first yes/no questions
+InputBox, Blocked, Blocked Providers, Did the practice block any providers? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, selectiveEnabled, Selective Upload, Did you enable selective upload? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, startedScheduler, IBEX Scheduler, Did you enable the IBEX Scheduler? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, verifiedUpload, Upload Verification, Did you verify the upload shows in SFDC? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, checkedActive, Active Patients Only, Did you check 'active patients only?' , Show, 50px, 50px, , , Sans, 3000, Enter Name
 
 
-SendRaw, Blocked Providers:
+
+SendRaw, Blocked Providers: %Blocked%
 Send, {return}
 SendRaw, Who Enabled 2-Way: SFDC
 Send, {return}
-SendRaw, Enabled Selective Upload: 
+SendRaw, Enabled Selective Upload: %selectiveEnabled%
 Send, {return}
-SendRaw, Started Ibex Scheduler: 
+SendRaw, Started Ibex Scheduler: %startedScheduler%
 Send, {return}
-SendRaw, Verified Upload: 
+SendRaw, Verified Upload: %verifiedUpload%
 Send, {return}
 SendRaw, Checked 'ActivePatientsOnly': 
 Send, {return}
 SendRaw, Verified addresses, username and
 Send, {return}
 SendRaw, passwords are correct: 
+Send, {return}{tab}
+SendRaw,TSM Entered: %TSMEntered%
+Send, {return}{tab}
+SendRaw, TSM Witnessed: %TSMWitnessed%
 Send, {return}
-	SendRaw, TSM Entered: 
-    Send, {return}
-	SendRaw, TSM Witnessed: 
-    Send, {return}
-    Send, {return}
+Send, {return}
 SendRaw, A: Contacting %custName% | remoted into server and workstations
 Send, {return}
 SendRaw, -Disabled power saving settings
@@ -206,3 +213,20 @@ SendRaw, https://ibex-support.internetbrands.com/logs/clientDataViewer.html?clie
 return 
 ;================================== END IBEX API FINDER ===================================;
 
+;================================== START IBEX CONFIRMATION ===================================;
+;Used to denote that the IBEX upload and 2 way were confirmed on next day
+::UpFirmed::
+
+Sleep, 2000
+InputBox, daysSinceUpload, Days Since Last Upload, How Many Days Since Last Upload?, Show, 50px, 50px, , , Sans, 3000, Days Since Last Upload
+InputBox, isEnabled, 2-Way Enabled, 2-Way Is/Is Not Enabled?, Show, 50px, 50px, , , Sans, 3000, Is
+
+
+SendRaw, A: Confirming that the upload was successful and 2-way continues to operate properly 
+Send, {return}
+SendRaw, R: There have been %daysSinceUpload% days since last upload and 2-way %isEnabled% enabled 
+Send, {return}
+SendRaw, - Customer is ready for onboarding
+Send, {return}
+SendRaw, - Done
+return 
