@@ -131,28 +131,39 @@ Sleep, 1000
 
 ;Will create a text entry box for the name of the customer contact
 InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, TSMEntered, TSM Entered, Please enter your name, Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, TSMWitnessed, TSM Witnessed, Please enter the name of the TSM who verified the address and Business ID, Show, 50px, 50px, , , Sans, 3000, Enter Name
 
-SendRaw, Blocked Providers: 
+; Temporary handling for the first yes/no questions
+InputBox, Blocked, Blocked Providers, Did the practice block any providers? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, selectiveEnabled, Selective Upload, Did you enable selective upload? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, startedScheduler, IBEX Scheduler, Did you enable the IBEX Scheduler? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, verifiedUpload, Upload Verification, Did you verify the upload shows in SFDC? , Show, 50px, 50px, , , Sans, 3000, Enter Name
+InputBox, checkedActive, Active Patients Only, Did you check 'active patients only?' , Show, 50px, 50px, , , Sans, 3000, Enter Name
+
+
+
+SendRaw, Blocked Providers: %Blocked%
 Send, {return}
 SendRaw, Who Enabled 2-Way: SFDC
 Send, {return}
-SendRaw, Enabled Selective Upload: 
+SendRaw, Enabled Selective Upload: %selectiveEnabled%
 Send, {return}
-SendRaw, Started Ibex Scheduler: 
+SendRaw, Started Ibex Scheduler: %startedScheduler%
 Send, {return}
-SendRaw, Verified Upload: 
+SendRaw, Verified Upload: %verifiedUpload%
 Send, {return}
 SendRaw, Checked 'ActivePatientsOnly': 
 Send, {return}
 SendRaw, Verified addresses, username and
 Send, {return}
 SendRaw, passwords are correct: 
+Send, {return}{tab}
+SendRaw,TSM Entered: %TSMEntered%
+Send, {return}{tab}
+SendRaw, TSM Witnessed: %TSMWitnessed%
 Send, {return}
-    SendRaw, TSM Entered: 
-    Send, {return}
-    SendRaw, TSM Witnessed: 
-    Send, {return}
-    Send, {return}
+Send, {return}
 SendRaw, A: Contacting %custName%
 Send, {return}
 SendRaw, - Remoted into server
