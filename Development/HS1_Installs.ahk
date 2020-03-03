@@ -230,3 +230,27 @@ SendRaw, - Customer is ready for onboarding
 Send, {return}
 SendRaw, - Done
 return 
+
+;================================== END IBEX CONFIRMATION ===================================;
+
+;================================== START IBEX USERINFO CONFIRMATION ===================================;
+; Script for verifying addresses, usernames, etc... for another installer.
+::Vfied::
+
+Sleep, 2000
+
+; Fetch user input here.
+InputBox, TSMEntered, TSM Entered, Which TSM entered the user info?, Show, 50px, 50px, , , Sans, 3000, TSM Entered
+InputBox, TSMWitnessed, TSM Witnessed, Which TSM witnessed and verified the user info?, Show, 50px, 50px, , , Sans, 3000, TSM Witnessed
+
+; Use user input to fill in the form for the template.
+SendRaw, Verified addresses, username and passwords are correct:
+Send, {return}{space}{space}{space}
+SendRaw, TSM Entered: %TSMEntered%
+Send, {return}{space}{space}{space}
+SendRaw, TSM Witnessed: %TSMWitnessed%
+Send, {return}
+SendRaw, Done
+return
+
+;================================== END IBEX USERINFO CONFIRMATION ===================================;
