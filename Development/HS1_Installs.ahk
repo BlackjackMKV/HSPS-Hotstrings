@@ -55,9 +55,6 @@ Return
 ;Pauses for 2 seconds at the start of the script to allow for the typed script to be deleted prior to the GUI showing up
 Sleep, 2000
 
-;Will create a text entry box for the name of the customer contact
-InputBox, custName, Customer Name, Please enter the name of the customer you are working with., Show, 50px, 50px, , , Sans, 3000, Enter Name
-
 ;Will create a text entry box for the name of the eSRV Admin TSM that set up eClaims
 InputBox, eSRVAdmin, Admin Name, Please etner the first initial and last name of the eServices Admin who provided passwords, Show, 50px, 50px, , , Sans, 3000, eSRV Admin
 
