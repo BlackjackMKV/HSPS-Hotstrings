@@ -234,7 +234,7 @@ return
 ;================================== END IBEX CONFIRMATION ===================================;
 
 ;================================== START IBEX USERINFO CONFIRMATION ===================================;
-; Script for verifying addresses, usernames, etc... for another installer.
+; Script for verifying addresses, usernames, etc...
 ::Vfied::
 
 Sleep, 2000
@@ -244,7 +244,7 @@ InputBox, TSMEntered, TSM Entered, Which TSM entered the user info?, Show, 50px,
 InputBox, TSMWitnessed, TSM Witnessed, Which TSM witnessed and verified the user info?, Show, 50px, 50px, , , Sans, 3000, TSM Witnessed
 
 ; Use user input to fill in the form for the template.
-SendRaw, Verified addresses, username and passwords are correct:
+SendRaw, A:Verified addresses, username and passwords are correct:
 Send, {return}{space}{space}{space}
 SendRaw, TSM Entered: %TSMEntered%
 Send, {return}{space}{space}{space}
@@ -254,3 +254,55 @@ SendRaw, Done
 return
 
 ;================================== END IBEX USERINFO CONFIRMATION ===================================;
+
+;================================== START IBEX USERINFO REQ CONFIRMATION ===================================;
+; Script for verifying addresses, usernames, etc...
+::Vquest::
+
+Sleep, 2000
+
+; Fetch user input here.
+InputBox, techName, TSM Requesting Verification, Which TSM requested the verification check?, Show, 50px, 50px, , , Sans, 3000, TSM Requesting Verification
+InputBox, TSMEntered, TSM Entered, Which TSM entered the user info?, Show, 50px, 50px, , , Sans, 3000, TSM Entered
+InputBox, TSMWitnessed, TSM Witnessed, Which TSM witnessed and verified the user info?, Show, 50px, 50px, , , Sans, 3000, TSM Witnessed
+
+; Use user input to fill in the form for the template.
+SendRaw, ***Received Address Verification request from %techName%***
+Send, {return}
+SendRaw, A:Remoted into server.
+Send, {return}
+SendRaw, A:Verified addresses, username and passwords are correct:
+Send, {return}{space}{space}{space}
+SendRaw, TSM Entered: %TSMEntered%
+Send, {return}{space}{space}{space}
+SendRaw, TSM Witnessed: %TSMWitnessed%
+Send, {return}
+SendRaw, Done
+return
+
+;================================== END IBEX USERINFO REQ CONFIRMATION ===================================;
+
+;================================== START IBEX API GENERATION ===================================;
+; Script for entering API generation notes.
+::APIGen::
+
+Sleep, 2000
+
+; Fetch user input here.
+InputBox, techName, TSM Requesting API, Which TSM requested the API be generated?, Show, 50px, 50px, , , Sans, 3000, TSM Requesting API
+
+; Use user input to fill in the form for the template.
+SendRaw, ***Received API generation request from %techName%***
+Send, {return}
+SendRaw, A:Confirming TSM had customer verbally verify address and that the address matches Salesforce account information.
+Send, {return}
+SendRaw, R:Addresses match.
+Send, {return}
+SendRaw, A:Generated API.
+Send, {return}
+SendRaw, R:API generated successfully.
+Send, {return}
+SendRaw, Done
+return
+
+;================================== END IBEX API GENERATION ===================================;
