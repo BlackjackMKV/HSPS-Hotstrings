@@ -4,6 +4,6 @@ Available Commands
 > Ibex Install Only: 		    IBEXOnly
 > eSync and Ibex Install: 	    eSyncIBEX
 > Confirmed Good Upload:	    Confirmed
-> Addresss Verification Reqst: 	Vquest
+> Addresss Verification Reqst: 	    Vquest
 > Address Verification:		    Vfied
-> API Generation Request:       APIGen
+> API Generation Request:           APIGen
