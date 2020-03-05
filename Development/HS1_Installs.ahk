@@ -266,7 +266,7 @@ InputBox, TSMWitnessed, TSM Witnessed, Which TSM witnessed and verified the user
 ; Use user input to fill in the form for the template.
 SendRaw, ***Received Address Verification request from %techName%***
 Send, {return}
-SendRaw, A:Remoted into server.
+SendRaw, A:Viewed server.
 Send, {return}
 SendRaw, A:Verified addresses, username and passwords are correct:
 Send, {return}{space}{space}{space}
