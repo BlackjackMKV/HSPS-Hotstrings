@@ -212,7 +212,7 @@ return
 
 ;================================== START IBEX CONFIRMATION ===================================;
 ;Used to denote that the IBEX upload and 2 way were confirmed on next day
-::Confirmed::
+::UpFirmed::
 
 Sleep, 2000
 InputBox, daysSinceUpload, Days Since Last Upload, How Many Days Since Last Upload?, Show, 50px, 50px, , , Sans, 3000, Days Since Last Upload
