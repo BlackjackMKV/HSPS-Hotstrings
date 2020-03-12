@@ -13,9 +13,15 @@ If toggle:=!toggle
 {
 Gui, Destroy
 Gui, New, AlwaysOnTop
+;===================== START GUI Styling Options ========================;
+Gui, Minimize
+; Gui, +Resize -MaximizeBox 
+
+
+;====================== END GUI Styling Options ==========================;
 Gui, Add, Text,, Please enter how often the mouse should move(Must be NUMBERS ONLY):
 Gui, Add, Text,, Minutes:
-Gui, Add, Edit, vvMinutes, 0
+Gui, Gui, Margin [0,.25, .25], Add, Edit, vvMinutes, 0
 Gui, Add, Text,, Seconds:
 Gui, Add, Edit, vvSeconds, 0
 Gui, Add, Text,, Please select how much the mouse should move:
@@ -26,6 +32,9 @@ Gui, Add, Radio, vvMoveObscene, Obscenely Large(This likely should be a last res
 Gui, Add, Button, Default , OK
 Gui, Add, Button,, Cancel
 Gui, Show,, MouseMover - 200.310.01
+
+
+
 }
 else
 {
