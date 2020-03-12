@@ -21,7 +21,7 @@ Gui, Minimize
 ;====================== END GUI Styling Options ==========================;
 Gui, Add, Text,, Please enter how often the mouse should move(Must be NUMBERS ONLY):
 Gui, Add, Text,, Minutes:
-Gui, Gui, Margin [0,.25, .25], Add, Edit, vvMinutes, 0
+Gui, Add, Edit, vvMinutes, 0
 Gui, Add, Text,, Seconds:
 Gui, Add, Edit, vvSeconds, 0
 Gui, Add, Text,, Please select how much the mouse should move:
